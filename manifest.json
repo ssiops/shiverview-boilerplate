@@ -1,0 +1,19 @@
+{
+  "name": "shiverview-boilerplate",
+  "desc": "Shiverview application boilerplate.",
+  "path": "/boilerplate",
+  "static": "static",
+  "ui": {
+    "icon": "favicon.png",
+    "navName": "Boilerplate",
+    "drawerName": "Boilerplate"
+  },
+  "privileges": {
+    "database": "shiverview",
+    "manager": true
+  },
+  "views": {
+    "index.html": "indexCtrl"
+  },
+  "dependencies": {}
+}
