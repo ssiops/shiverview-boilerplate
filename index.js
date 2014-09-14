@@ -7,6 +7,7 @@ function App() {
   }
   this.routes = require('./routes.js');
   this.pkg = require('./package.json');
+  this.bower = require('./bower.json');
   return this;
 }
 

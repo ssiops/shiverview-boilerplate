@@ -6,14 +6,21 @@
   "ui": {
     "icon": "favicon.png",
     "navName": "Boilerplate",
-    "drawerName": "Boilerplate"
+    "drawerName": "Boilerplate",
+    "index": 1,
+    "views": {
+      "/": {"scope": "everyone", "title": "Home", "url": "/home.html", "ctrl": "boilerplateHomeCtrl"},
+      "/foo": {"scope": "everyone", "title": "Foo", "url": "/foo.html", "ctrl": "boilerplateFooCtrl"},
+      "/bar": {"scope": "users", "title": "Bar", "url": "/bar.html", "ctrl": "boilerplateBarCtrl"}
+    },
+    "ngmod": ["ngResource"],
+    "scripts": "controller.js"
   },
   "privileges": {
     "database": "shiverview",
     "manager": true
   },
-  "views": {
-    "index.html": "indexCtrl"
-  },
-  "dependencies": {}
+  "dependencies": {
+    "shiverview-core-ui": "*"
+  }
 }
