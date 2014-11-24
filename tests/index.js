@@ -1,7 +1,7 @@
 var q = require('q');
 var request = require('request');
 
-var baseurl = 'http://localhost:' + process.env.port || 80 + '/boilerplate';
+var baseurl = 'http://localhost:' + (process.env.port || 80) + '/boilerplate';
 
 module.exports = {
   '/get': function (it) {
