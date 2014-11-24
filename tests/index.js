@@ -1,11 +1,13 @@
 var q = require('q');
 var request = require('request');
 
+var baseurl = 'http://localhost:' + process.env.port || 80 + '/boilerplate';
+
 module.exports = {
   '/get': function (it) {
     var d = q.defer();
     it('should retrieve a list of strings', function () {
-      request.get('http://localhost:' + process.env.port || 80, function (err, res, body) {
+      request.get(baseurl + '/get', function (err, res, body) {
         if (res.statusCode !== 200)
           return d.reject('got status code ' + res.statusCode);
         else {
@@ -22,7 +24,7 @@ module.exports = {
   '/add': function (it) {
     var d = q.defer();
     it('should add a string to database and respond 201', function () {
-      request.get('http://localhost:' + process.env.port || 80, function (err, res, body) {
+      request.get(baseurl + '/add', function (err, res, body) {
         if (res.statusCode !== 201)
           d.reject('got status code ' + res.statusCode);
         else
@@ -34,7 +36,7 @@ module.exports = {
   '/drop': function (it) {
     var d = q.defer();
     it('should drop all strings in database and respond 201', function (Db) {
-      request.get('http://localhost:' + process.env.port || 80, function (err, res, body) {
+      request.get(baseurl + '/drop', function (err, res, body) {
         if (res.statusCode !== 201)
           return d.reject('got status code ' + res.statusCode);
         else {
